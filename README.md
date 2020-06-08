@@ -1,5 +1,6 @@
 toy gorouter
 ============
+![Go Build & Test](https://github.com/nhomble/toy-gorouter/workflows/Go%20Build%20&%20Test/badge.svg)
 
 Does simple routing across statically configured backends. Async checks healthiness of backends and round robins to
 different healthy resources.
