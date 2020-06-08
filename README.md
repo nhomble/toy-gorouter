@@ -1,6 +1,26 @@
-- logging middleware
-- base path handling
-- dynamic config refresh
+toy gorouter
+============
+
+Does simple routing across statically configured backends. Async checks healthiness of backends and round robins to
+different healthy resources.
+
+# usage
+```bash
+$ cd gorouter; go build
+$ ./gorouter -config ..\resources\your-configuration.yml
+```
+
+And if you want a simple backend to try it out
+```bash
+$ cd logserver; go build
+$ ./logserver -port <port that matches config>
+```
+
+# todo
+- http healthchecks
+- configure base uris
+- dynamically refresh configurations
 - auth
 
-inspired by ```kasvith```
+# credit
+inspired by kasvith
