@@ -30,8 +30,11 @@ jobs:
             dep ensure
         fi
 
-    - name: Build
+    - name: Build Router
       run: cd gorouter; go build -v .
+
+    - name: Build LogServer
+      run: cd logserver; go build -v .
 
     - name: Test
       run: cd gorouter; go test -v .
