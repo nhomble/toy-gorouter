@@ -8,7 +8,7 @@ different healthy resources.
 # usage
 ```bash
 $ cd gorouter; go build
-$ ./gorouter -config ..\resources\your-configuration.yml
+$ ./gorouter -config your-configuration.yml
 ```
 
 And if you want a simple backend to try it out
@@ -16,6 +16,8 @@ And if you want a simple backend to try it out
 $ cd logserver; go build
 $ ./logserver -port <port that matches config>
 ```
+
+There is sample configuration in [basic.yml](resources/basic.yml)
 
 # todo
 - http healthchecks
