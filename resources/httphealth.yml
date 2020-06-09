@@ -1,0 +1,11 @@
+port: 8080
+balancer:
+  type: roundrobin
+health:
+  type: http
+  timeout: 1
+  interval: 5
+  endpoint: /health
+backends:
+  - http://localhost:8081
+  - http://localhost:8082

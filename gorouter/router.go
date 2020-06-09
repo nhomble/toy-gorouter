@@ -123,9 +123,11 @@ func makeRoutingHandler(config RouterConfig) routingHandler {
 	}
 	if config.Health.Type == "tcp" {
 		handler.health = tcpHealthcheck{
-			timeout: config.Health.Timeout,
+			timeout:  config.Health.Timeout,
 			interval: config.Health.Interval,
 		}
+	} else if config.Health.Type == "http" {
+		handler.health = newHttpHealthcheck(config.Health.Interval, config.Health.Timeout, config.Health.Endpoint)
 	}
 
 	go handler.health.Loop(handler.pool)

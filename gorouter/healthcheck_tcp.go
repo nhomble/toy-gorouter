@@ -20,7 +20,11 @@ func (t tcpHealthcheck) Loop(p *destinationPool) {
 				logDebug("Checking health of url=%s", ele.url.Host)
 				health := t.Check(ele)
 				ele.SetHealth(health)
-				logWarn("TCP health result url=%s result=%t", ele.url.Host, health)
+				if health {
+					logInfo("TCP health result url=%s result=%t", ele.url.Host, health)
+				} else {
+					logWarn("TCP health result url=%s result=%t", ele.url.Host, health)
+				}
 			}
 		}
 	}

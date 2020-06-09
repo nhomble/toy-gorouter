@@ -21,6 +21,7 @@ type HealthConfig struct {
 	Type     string
 	Interval int
 	Timeout  int
+	Endpoint string
 }
 
 func readConfig(path string) (RouterConfig, error) {

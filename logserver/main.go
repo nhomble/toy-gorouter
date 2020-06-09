@@ -27,6 +27,7 @@ func main() {
 	flag.Parse()
 
 	http.Handle("/api/v1/ping", http.HandlerFunc(ping))
+	http.Handle("/health", http.HandlerFunc(health))
 	if err := http.ListenAndServe(fmt.Sprintf(":%s", port), nil); err != nil {
 		log.Fatal(err)
 	}

@@ -20,7 +20,6 @@ $ ./logserver -port <port that matches config>
 There is sample configuration in [basic.yml](resources/basic.yml)
 
 # todo
-- http healthchecks
 - configure base uris
 - dynamically refresh configurations
 - auth
